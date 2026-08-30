@@ -1,0 +1,582 @@
+
+/* =====================================================
+   PÁGINA INICIAL PROFISSIONAL — REGRA FINAL
+   Mantém o conteúdo legível e bem proporcionado mesmo
+   em monitores grandes e telas ultrawide.
+===================================================== */
+
+@media (min-width: 769px) {
+  .hero,
+  .secao,
+  .inicio-recentes,
+  .inicio-como-funciona,
+  .inicio-redes {
+    width: min(calc(100% - 48px), 1480px) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero {
+    min-height: 480px !important;
+    margin-top: 28px !important;
+    padding: 58px 56px !important;
+    border: 1px solid rgba(232, 126, 51, 0.25) !important;
+    border-radius: 28px !important;
+    grid-template-columns: minmax(0, 1fr) 380px !important;
+    gap: 52px !important;
+    box-shadow: 0 24px 65px rgba(78, 45, 20, 0.11) !important;
+  }
+
+  .hero-conteudo {
+    max-width: 690px !important;
+  }
+
+  .hero-conteudo .etiqueta,
+  .inicio-subtitulo,
+  .inicio-redes-etiqueta {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 900 !important;
+  }
+
+  .hero-conteudo h1 {
+    max-width: 680px !important;
+    margin: 14px 0 18px !important;
+    font-size: clamp(44px, 4vw, 62px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -2.7px !important;
+  }
+
+  .hero .proposta-texto {
+    max-width: 650px !important;
+    margin-bottom: 28px !important;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+
+  .hero .acoes {
+    gap: 12px !important;
+  }
+
+  .hero .acoes a {
+    min-height: 49px !important;
+    padding: 12px 20px !important;
+    border-radius: 11px !important;
+    font-size: 14px !important;
+  }
+
+  .hero > .resumo {
+    width: 100% !important;
+    padding: 24px !important;
+    border-radius: 19px !important;
+    box-shadow: 0 18px 40px rgba(6, 35, 59, 0.25) !important;
+  }
+
+  .resumo-cabecalho h2 {
+    font-size: 16px !important;
+  }
+
+  .estatisticas {
+    gap: 10px !important;
+  }
+
+  .estatisticas article {
+    min-height: 65px !important;
+    padding: 13px 15px !important;
+    border-radius: 11px !important;
+  }
+
+  .estatisticas strong {
+    min-width: 34px !important;
+    font-size: 23px !important;
+  }
+
+  .estatisticas span {
+    font-size: 13px !important;
+  }
+
+  .secao,
+  .inicio-recentes,
+  .inicio-como-funciona {
+    margin-top: 34px !important;
+    padding: 42px !important;
+    border: 1px solid rgba(226, 151, 93, 0.2) !important;
+    border-radius: 24px !important;
+  }
+
+  .categorias-cabecalho,
+  .inicio-secao-cabecalho {
+    margin-bottom: 25px !important;
+  }
+
+  .categorias-cabecalho h2,
+  .inicio-secao-cabecalho h2,
+  .inicio-redes h2 {
+    margin: 8px 0 !important;
+    font-size: clamp(28px, 2.4vw, 36px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .categorias-cabecalho p,
+  .inicio-secao-cabecalho p,
+  .inicio-redes-conteudo > p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  .categorias-atalhos {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .categoria-atalho {
+    min-height: 142px !important;
+    padding: 21px !important;
+    border-radius: 16px !important;
+    gap: 15px !important;
+    transition: transform 180ms ease, box-shadow 180ms ease !important;
+  }
+
+  .categoria-atalho:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 16px 32px rgba(40, 52, 60, 0.12) !important;
+  }
+
+  .categoria-icone {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 13px !important;
+  }
+
+  .categoria-conteudo h3 {
+    margin-bottom: 6px !important;
+    font-size: 18px !important;
+  }
+
+  .categoria-conteudo p,
+  .categoria-contagem,
+  .categoria-registrar {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .inicio-lista-recentes {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  .inicio-ocorrencia {
+    overflow: hidden !important;
+    border-radius: 17px !important;
+    box-shadow: 0 15px 35px rgba(34, 48, 57, 0.09) !important;
+  }
+
+  .inicio-ocorrencia-icone,
+  .inicio-ocorrencia-icone img,
+  .inicio-foto-fallback {
+    width: 100% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+  }
+
+  .inicio-ocorrencia-conteudo {
+    padding: 20px !important;
+  }
+
+  .inicio-ocorrencia-topo h3 {
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+  }
+
+  .inicio-status {
+    padding: 7px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .inicio-localizacao,
+  .inicio-data,
+  .inicio-detalhes {
+    font-size: 13px !important;
+  }
+
+  .inicio-passos {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 15px !important;
+  }
+
+  .inicio-passo {
+    min-height: 220px !important;
+    padding: 23px !important;
+    border-radius: 16px !important;
+  }
+
+  .inicio-passo-icone {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .inicio-passo-numero {
+    font-size: 25px !important;
+  }
+
+  .inicio-passo h3 {
+    margin: 17px 0 8px !important;
+    font-size: 17px !important;
+  }
+
+  .inicio-passo p {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+
+  .inicio-como-botao,
+  .inicio-ver-todas {
+    min-height: 44px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+  }
+
+  .inicio-redes {
+    min-height: 230px !important;
+    margin-top: 34px !important;
+    margin-bottom: 44px !important;
+    padding: 40px 44px !important;
+    border-radius: 24px !important;
+  }
+
+  .inicio-redes-conteudo {
+    max-width: 790px !important;
+  }
+
+  .inicio-redes-botoes {
+    margin-top: 22px !important;
+    gap: 11px !important;
+  }
+
+  .inicio-rede {
+    min-height: 53px !important;
+    padding: 11px 14px !important;
+    border-radius: 11px !important;
+  }
+
+  .inicio-rede strong {
+    font-size: 13px !important;
+  }
+
+  .inicio-rede small,
+  .inicio-redes-aviso {
+    font-size: 11px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero > .resumo {
+    max-width: 620px !important;
+  }
+
+  .categorias-atalhos,
+  .inicio-lista-recentes {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .inicio-passos {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .secao,
+  .inicio-recentes,
+  .inicio-como-funciona,
+  .inicio-redes {
+    width: calc(100% - 28px) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero {
+    margin-top: 14px !important;
+    padding: 32px 22px !important;
+    border-radius: 21px !important;
+  }
+
+  .hero-conteudo h1 {
+    font-size: clamp(36px, 11vw, 48px) !important;
+    line-height: 1 !important;
+  }
+
+  .hero .proposta-texto {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+  }
+
+  .secao,
+  .inicio-recentes,
+  .inicio-como-funciona,
+  .inicio-redes {
+    margin-top: 18px !important;
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .categorias-atalhos,
+  .inicio-lista-recentes,
+  .inicio-passos {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .categoria-atalho,
+  .inicio-passo {
+    min-height: 130px !important;
+    padding: 18px !important;
+  }
+
+  .inicio-ocorrencia-icone,
+  .inicio-ocorrencia-icone img,
+  .inicio-foto-fallback {
+    height: 210px !important;
+    min-height: 210px !important;
+  }
+
+  .inicio-redes {
+    margin-bottom: 105px !important;
+  }
+}
+
+/* V2 — apresentação mais forte em computadores */
+@media (min-width: 1101px) {
+  .hero,
+  .secao,
+  .inicio-recentes,
+  .inicio-como-funciona,
+  .inicio-redes {
+    width: min(calc(100% - 64px), 1320px) !important;
+  }
+
+  .hero {
+    min-height: 560px !important;
+    margin-top: 34px !important;
+    padding: 72px 68px !important;
+    border-radius: 32px !important;
+    grid-template-columns: minmax(0, 1fr) 410px !important;
+    gap: 60px !important;
+  }
+
+  .hero-conteudo h1 {
+    font-size: clamp(54px, 4.4vw, 72px) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -3.5px !important;
+  }
+
+  .hero .proposta-texto {
+    max-width: 680px !important;
+    font-size: 18px !important;
+  }
+
+  .hero .acoes a {
+    min-height: 54px !important;
+    padding: 14px 24px !important;
+    font-size: 15px !important;
+  }
+
+  .hero > .resumo {
+    padding: 28px !important;
+  }
+
+  .resumo-cabecalho h2 {
+    font-size: 18px !important;
+  }
+
+  .estatisticas article {
+    min-height: 75px !important;
+  }
+
+  .estatisticas strong {
+    font-size: 28px !important;
+  }
+
+  .estatisticas span {
+    font-size: 14px !important;
+  }
+
+  .secao,
+  .inicio-recentes,
+  .inicio-como-funciona {
+    margin-top: 42px !important;
+    padding: 52px !important;
+    border-radius: 28px !important;
+    box-shadow: 0 18px 50px rgba(83, 48, 22, 0.07) !important;
+  }
+
+  .categorias-cabecalho h2,
+  .inicio-secao-cabecalho h2,
+  .inicio-redes h2 {
+    font-size: 39px !important;
+  }
+
+  .categorias-cabecalho p,
+  .inicio-secao-cabecalho p,
+  .inicio-redes-conteudo > p {
+    font-size: 16px !important;
+  }
+
+  .categorias-atalhos {
+    gap: 20px !important;
+  }
+
+  .categoria-atalho {
+    min-height: 170px !important;
+    padding: 25px !important;
+    border-radius: 19px !important;
+  }
+
+  .categoria-icone {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .categoria-conteudo h3 {
+    font-size: 20px !important;
+  }
+
+  .categoria-conteudo p,
+  .categoria-contagem,
+  .categoria-registrar {
+    font-size: 14px !important;
+  }
+
+  .inicio-lista-recentes {
+    gap: 22px !important;
+  }
+
+  .inicio-ocorrencia-icone,
+  .inicio-ocorrencia-icone img,
+  .inicio-foto-fallback {
+    height: 260px !important;
+    min-height: 260px !important;
+  }
+
+  .inicio-ocorrencia-conteudo {
+    padding: 24px !important;
+  }
+
+  .inicio-ocorrencia-topo h3 {
+    font-size: 20px !important;
+  }
+
+  .inicio-localizacao,
+  .inicio-data,
+  .inicio-detalhes {
+    font-size: 14px !important;
+  }
+
+  .inicio-passos {
+    gap: 18px !important;
+  }
+
+  .inicio-passo {
+    min-height: 260px !important;
+    padding: 27px !important;
+  }
+
+  .inicio-passo h3 {
+    font-size: 19px !important;
+  }
+
+  .inicio-passo p {
+    font-size: 14px !important;
+  }
+
+  .inicio-redes {
+    min-height: 270px !important;
+    margin-top: 42px !important;
+    padding: 48px 52px !important;
+    border-radius: 28px !important;
+  }
+}
+
+/* Decoração ambiente nas laterais da página inicial */
+@media (min-width: 1500px) {
+  .aplicacao {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .aplicacao::before {
+    content: "";
+    position: fixed;
+    z-index: 2;
+    inset: 60px 0 0;
+    pointer-events: none;
+    opacity: 0.68;
+    background:
+      radial-gradient(circle at 6% 18%, rgba(255, 90, 0, 0.25) 0 5px, transparent 6px),
+      radial-gradient(circle at 94% 29%, rgba(99, 179, 46, 0.23) 0 5px, transparent 6px),
+      radial-gradient(circle at 4% 68%, rgba(255, 129, 38, 0.22) 0 4px, transparent 5px),
+      radial-gradient(circle at 96% 78%, rgba(13, 53, 82, 0.2) 0 4px, transparent 5px),
+      repeating-linear-gradient(
+        32deg,
+        transparent 0 78px,
+        rgba(13, 53, 82, 0.1) 79px 81px,
+        transparent 82px 158px
+      ),
+      repeating-linear-gradient(
+        148deg,
+        transparent 0 105px,
+        rgba(255, 90, 0, 0.08) 106px 108px,
+        transparent 109px 205px
+      );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      #000 0%,
+      #000 13%,
+      transparent 19%,
+      transparent 81%,
+      #000 87%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      #000 0%,
+      #000 13%,
+      transparent 19%,
+      transparent 81%,
+      #000 87%,
+      #000 100%
+    );
+  }
+
+  .aplicacao::after {
+    content: "";
+    position: fixed;
+    z-index: 2;
+    inset: 60px 0 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at -2% 25%, rgba(255, 129, 38, 0.17), transparent 18%),
+      radial-gradient(circle at 102% 62%, rgba(99, 179, 46, 0.13), transparent 17%),
+      radial-gradient(circle at 1% 91%, rgba(13, 53, 82, 0.11), transparent 15%);
+  }
+
+  .aplicacao > header,
+  .aplicacao > main {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 1800px) {
+  .aplicacao::before {
+    opacity: 0.76;
+  }
+}

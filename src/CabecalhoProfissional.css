@@ -1,0 +1,169 @@
+
+
+.cabecalho {
+  min-height: 74px !important;
+  padding: 9px max(24px, calc((100vw - 1440px) / 2)) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 2000 !important;
+  border-bottom: 2px solid rgba(255, 100, 19, 0.92) !important;
+  background: rgba(6, 35, 59, 0.97) !important;
+  box-shadow: 0 8px 28px rgba(6, 35, 59, 0.2) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  backdrop-filter: blur(14px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 28px !important;
+}
+
+.cabecalho .logo {
+  min-width: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+}
+
+.cabecalho .logo-imagem {
+  width: 52px !important;
+  height: 52px !important;
+  flex-shrink: 0 !important;
+  border-radius: 15px !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 5px 11px rgba(0, 0, 0, 0.18)) !important;
+}
+
+.cabecalho .logo > div {
+  min-width: 0 !important;
+  display: grid !important;
+  gap: 3px !important;
+}
+
+.cabecalho .logo strong {
+  color: #ffffff !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  letter-spacing: -0.25px !important;
+}
+
+.cabecalho .logo small {
+  color: #b8cedc !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.015em !important;
+}
+
+.cabecalho .menu {
+  padding: 5px !important;
+  border: 1px solid rgba(184, 206, 220, 0.15) !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.055) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.cabecalho .menu a {
+  min-height: 42px !important;
+  padding: 10px 15px !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  color: #d9e6ee !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-size: 13px !important;
+  font-weight: 750 !important;
+  text-decoration: none !important;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease !important;
+}
+
+.cabecalho .menu a:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 129, 38, 0.3) !important;
+  background: rgba(255, 129, 38, 0.11) !important;
+  transform: translateY(-1px) !important;
+}
+
+.cabecalho .menu a.menu-ativo,
+.cabecalho .menu a[aria-current="page"] {
+  color: #ffffff !important;
+  border-color: #ff8126 !important;
+  background: linear-gradient(135deg, #ff8126, #ff5a00) !important;
+  box-shadow: 0 7px 17px rgba(255, 90, 0, 0.25) !important;
+}
+
+.cabecalho .menu a svg {
+  width: 18px !important;
+  height: 18px !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    min-height: 68px !important;
+    padding: 8px 16px !important;
+    justify-content: center !important;
+  }
+
+  .cabecalho .logo-imagem {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .cabecalho .logo strong {
+    font-size: 17px !important;
+  }
+
+  .cabecalho .menu {
+    position: fixed !important;
+    right: 10px !important;
+    bottom: calc(9px + env(safe-area-inset-bottom)) !important;
+    left: 10px !important;
+    z-index: 2100 !important;
+    width: auto !important;
+    padding: 7px !important;
+    border: 1px solid rgba(255, 129, 38, 0.34) !important;
+    border-radius: 18px !important;
+    background: rgba(6, 35, 59, 0.98) !important;
+    box-shadow: 0 15px 38px rgba(6, 35, 59, 0.35) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    backdrop-filter: blur(15px) !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+  }
+
+  .cabecalho .menu a {
+    min-width: 0 !important;
+    min-height: 52px !important;
+    padding: 6px 3px !important;
+    border: 0 !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    font-size: 10px !important;
+  }
+
+  .cabecalho .menu a:hover {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .cabecalho .logo small {
+    display: none !important;
+  }
+
+  .cabecalho .menu a {
+    font-size: 9px !important;
+  }
+}

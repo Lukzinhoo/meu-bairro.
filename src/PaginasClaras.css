@@ -1,0 +1,278 @@
+/* Fundo claro para todas as páginas */
+
+.pagina,
+.pagina-registro,
+.pagina-mapa,
+.admin-pagina,
+.admin-login-pagina,
+.admin-centralizado {
+  color: #08243a !important;
+  background:
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(255, 90, 0, 0.22),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #fff8ef,
+      #ffd7aa
+    ) !important;
+}
+
+/* Títulos */
+
+.pagina h1,
+.titulo-pagina h1,
+.cabecalho-mapa h1,
+.admin-topo h1 {
+  color: #08243a !important;
+}
+
+.titulo-pagina p,
+.cabecalho-mapa p,
+.admin-topo p {
+  color: #496a80 !important;
+}
+
+/* Formulário */
+
+.formulario-registro,
+.registro-sucesso,
+.admin-login {
+  color: #08243a !important;
+  background: #ffffff !important;
+  border: 2px solid #ff9c5c !important;
+  box-shadow:
+    0 24px 60px
+    rgba(75, 42, 16, 0.16) !important;
+}
+
+.campo label,
+.admin-login label,
+.admin-login h1 {
+  color: #08243a !important;
+}
+
+.campo input,
+.campo select,
+.campo textarea,
+.admin-login input {
+  color: #08243a !important;
+  background: #fff8ef !important;
+  border-color: #d9a77d !important;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus,
+.admin-login input:focus {
+  color: #08243a !important;
+  background: #ffffff !important;
+  border-color: #ff5a00 !important;
+}
+
+/* Botões laranjas */
+
+.botao-localizacao,
+.botao-abrir-camera,
+.botao-camera-video,
+.botao-escolher-galeria {
+  min-height: 49px !important;
+  padding: 12px 16px !important;
+  border: 1px solid #ff5a00 !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      #ff8126,
+      #ff5a00
+    ) !important;
+  box-shadow:
+    0 9px 20px
+    rgba(255, 90, 0, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease !important;
+}
+
+/*
+ * Esta regra mais específica impede que
+ * ".campo label" deixe a letra escura.
+ */
+
+.campo label.botao-escolher-galeria,
+.formulario-registro
+  label.botao-escolher-galeria {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      #ff8126,
+      #ff5a00
+    ) !important;
+}
+
+/* Efeito ao passar o mouse */
+
+.botao-localizacao:hover:not(:disabled),
+.botao-abrir-camera:hover:not(:disabled),
+.botao-camera-video:hover:not(:disabled),
+.campo
+  label.botao-escolher-galeria:hover,
+.formulario-registro
+  label.botao-escolher-galeria:hover {
+  color: #ffffff !important;
+  border-color: #ff5a00 !important;
+  background:
+    linear-gradient(
+      135deg,
+      #ff913d,
+      #ff5a00
+    ) !important;
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 13px 27px
+    rgba(255, 90, 0, 0.3) !important;
+}
+
+/* Botões desativados */
+
+.botao-localizacao:disabled,
+.botao-abrir-camera:disabled,
+.botao-camera-video:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.65 !important;
+  transform: none !important;
+}
+
+/* Ícones dos botões */
+
+.botao-localizacao svg,
+.botao-abrir-camera svg,
+.botao-camera-video svg,
+.botao-escolher-galeria svg {
+  color: #ffffff !important;
+}
+
+/* Câmera dentro do site */
+
+.camera-interna {
+  color: #ffffff !important;
+  background: #06233b !important;
+  border-color: #ff5a00 !important;
+}
+
+.camera-cabecalho,
+.camera-cabecalho strong {
+  color: #ffffff !important;
+}
+
+.camera-cabecalho button {
+  color: #ffffff !important;
+}
+
+.camera-capturar {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      #ff8126,
+      #ff5a00
+    ) !important;
+}
+
+.camera-gravar {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      #ef4444,
+      #be123c
+    ) !important;
+}
+
+.camera-parar {
+  color: #ffffff !important;
+  background:
+    linear-gradient(
+      135deg,
+      #dc2626,
+      #991b1b
+    ) !important;
+}
+
+/* Prévia da foto e do vídeo */
+
+.midia-preview-card {
+  color: #08243a !important;
+  background: #ffffff !important;
+  border-color: #e0ad82 !important;
+}
+
+.midia-preview-titulo strong {
+  color: #08243a !important;
+}
+
+/* Mapa */
+
+.legenda-mapa {
+  color: #08243a !important;
+  background: #ffffff !important;
+  border-color: #e0ad82 !important;
+}
+
+.legenda-mapa span {
+  color: #36566c !important;
+}
+
+.mapa-conteudo {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+/* Administração */
+
+.admin-metricas article,
+.admin-grafico,
+.admin-lista {
+  color: #08243a !important;
+  background: #ffffff !important;
+  border-color: #e0ad82 !important;
+}
+
+.admin-metricas strong,
+.grafico-titulo h2,
+.admin-lista-titulo h2 {
+  color: #08243a !important;
+}
+
+.admin-ocorrencia {
+  color: #08243a !important;
+  background: #fff8ef !important;
+  border-color: #dfae85 !important;
+}
+
+.admin-ocorrencia-cabecalho h3,
+.admin-ocorrencia-dados p {
+  color: #08243a !important;
+}
+
+/* Ajustes para celular */
+
+@media (max-width: 700px) {
+  .botao-localizacao,
+  .botao-abrir-camera,
+  .botao-camera-video,
+  .botao-escolher-galeria {
+    width: 100% !important;
+  }
+}

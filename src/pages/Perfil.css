@@ -1,0 +1,142 @@
+.perfil-pagina {
+  min-height: calc(100vh - 90px);
+  padding: 48px max(20px, calc((100vw - 1400px) / 2)) 130px;
+  color: #08243a;
+  background: radial-gradient(circle at top right, rgba(255,118,31,.2), transparent 34%), linear-gradient(135deg,#fff3df,#ffd0a8);
+}
+
+.perfil-cabecalho {
+  width: 100%; margin: 0 auto 24px; padding: 30px; display: flex; align-items: center; gap: 22px;
+  border: 2px solid #ff7417; border-radius: 24px; color: #fff; background: #082f49;
+  box-shadow: 0 20px 45px rgba(8,47,73,.2);
+}
+
+.perfil-avatar {
+  width: 105px; height: 105px; flex-shrink: 0; display: grid; place-items: center; overflow: hidden;
+  border: 4px solid #ff7417; border-radius: 50%; color: #fff;
+  background: linear-gradient(135deg,#ff7417,#ff9f45); font-size: 32px; font-weight: 800;
+}
+
+.perfil-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.perfil-identificacao { flex: 1; }
+.perfil-identificacao > span { color: #ff9f45; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.perfil-identificacao h1 { margin: 7px 0; color: #fff; font-size: clamp(28px,4vw,42px); }
+.perfil-identificacao p { max-width: 580px; margin: 0; color: #d7e7f1; line-height: 1.55; }
+
+.perfil-selo {
+  width: max-content; margin-top: 13px; padding: 7px 11px; display: flex; align-items: center; gap: 7px;
+  border: 1px solid rgba(255,159,69,.5); border-radius: 999px; color: #ffd2af; background: rgba(255,116,23,.13);
+  font-size: 12px; font-weight: 800;
+}
+
+.perfil-sair {
+  padding: 12px 17px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  border: 1px solid #ff8a3d; border-radius: 12px; color: #fff; background: transparent; font-weight: 700; cursor: pointer;
+}
+.perfil-sair:hover { background: #d93e2b; }
+
+.perfil-mensagem, .perfil-aviso {
+  width: 100%; margin: 0 auto 20px; padding: 14px 17px; border-radius: 12px; font-weight: 700;
+}
+.perfil-mensagem { display: flex; align-items: center; gap: 10px; }
+.perfil-mensagem.erro,.perfil-aviso.perfil-erro { border: 1px solid #ef4444; color: #991b1b; background: #fee2e2; }
+.perfil-mensagem.sucesso { border: 1px solid #22c55e; color: #166534; background: #dcfce7; }
+.perfil-aviso { max-width: 600px; margin-top: 60px; color: #123b53; background: #fff; text-align: center; }
+
+.perfil-metricas {
+  width: 100%; margin-bottom: 24px; display: grid; grid-template-columns: repeat(4,1fr); gap: 15px;
+}
+.perfil-metricas article {
+  min-height: 126px; padding: 19px; border: 1px solid #e5b98f; border-radius: 17px; background: rgba(255,255,255,.96);
+  box-shadow: 0 12px 28px rgba(73,41,16,.08); display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 6px 12px;
+}
+.perfil-metricas svg { color: #ff6413; }
+.perfil-metricas strong { color: #082f49; font-size: 31px; }
+.perfil-metricas span { grid-column: 1/-1; color: #61798a; font-size: 13px; font-weight: 700; }
+
+.perfil-conteudo { width: 100%; display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 24px; }
+.perfil-informacoes,.perfil-formulario,.perfil-historico {
+  padding: 28px; border: 1px solid #d7e3eb; border-radius: 20px; background: rgba(255,255,255,.96);
+  box-shadow: 0 18px 45px rgba(8,47,73,.12);
+}
+.perfil-informacoes h2,.perfil-formulario h2 { margin: 0 0 23px; color: #082f49; font-size: 22px; }
+
+.perfil-dado { padding: 17px; display: flex; align-items: center; gap: 14px; border: 1px solid #dce6ec; border-radius: 14px; color: #ff7417; background: #f8fbfd; }
+.perfil-dado + .perfil-dado { margin-top: 14px; }
+.perfil-dado div { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.perfil-dado span { color: #627789; font-size: 13px; font-weight: 600; }
+.perfil-dado strong { overflow-wrap: anywhere; color: #123b53; font-size: 15px; }
+
+.perfil-formulario { display: flex; flex-direction: column; }
+.perfil-formulario > label { margin: 17px 0 7px; color: #173f56; font-size: 14px; font-weight: 750; }
+.perfil-formulario > label:first-of-type { margin-top: 0; }
+.perfil-campo { min-height: 50px; padding: 0 15px; display: flex; align-items: center; gap: 11px; border: 1px solid #cbd9e2; border-radius: 12px; color: #ff7417; background: #fff; }
+.perfil-campo:focus-within { border-color: #ff7417; box-shadow: 0 0 0 4px rgba(255,116,23,.13); }
+.perfil-campo input { width: 100%; min-width: 0; padding: 14px 0; border: 0; outline: 0; color: #123b53; background: transparent; font: inherit; }
+.perfil-campo input::placeholder { color: #8ba0ad; }
+
+.perfil-escolher-avatar {
+  min-height: 50px; margin: 0 !important; padding: 12px 15px; display: flex; align-items: center; justify-content: center; gap: 9px;
+  border: 1px dashed #ff7417; border-radius: 12px; color: #d94b09; background: #fff5ea; font-weight: 800; cursor: pointer;
+}
+.perfil-input-arquivo { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+
+.perfil-salvar {
+  min-height: 52px; margin-top: 25px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  border: 0; border-radius: 13px; color: #fff; background: linear-gradient(135deg,#ff7417,#ff9340);
+  font-size: 15px; font-weight: 800; cursor: pointer; box-shadow: 0 12px 25px rgba(255,116,23,.25);
+}
+.perfil-salvar:disabled { cursor: wait; opacity: .65; }
+
+.perfil-historico { width: 100%; margin-top: 24px; }
+.perfil-historico-topo { margin-bottom: 22px; display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; }
+.perfil-historico-topo span { color: #e85108; font-size: 12px; font-weight: 900; text-transform: uppercase; }
+.perfil-historico-topo h2 { margin: 5px 0 0; color: #082f49; }
+.perfil-historico-topo > a,.perfil-sem-ocorrencias a {
+  padding: 11px 15px; border-radius: 11px; color: #fff; background: linear-gradient(135deg,#ff8126,#ff5a00); font-weight: 800;
+}
+
+.perfil-lista-ocorrencias { display: grid; gap: 13px; }
+.perfil-ocorrencia {
+  min-width: 0; padding: 13px; display: grid; grid-template-columns: 115px minmax(0,1fr) auto; align-items: center; gap: 16px;
+  border: 1px solid #dfc3aa; border-radius: 15px; background: #fffaf4;
+}
+.perfil-ocorrencia > img,.perfil-ocorrencia-sem-foto { width: 115px; height: 90px; border-radius: 11px; object-fit: cover; }
+.perfil-ocorrencia-sem-foto { display: grid; place-items: center; color: #ff7417; background: #ffe8d3; }
+.perfil-ocorrencia > div:nth-child(2) { min-width: 0; }
+.perfil-ocorrencia > div:nth-child(2) > span { color: #e9510d; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+.perfil-ocorrencia h3 { margin: 5px 0; color: #082f49; }
+.perfil-ocorrencia p { margin: 0 0 7px; color: #5d7789; display: flex; align-items: center; gap: 5px; overflow-wrap: anywhere; }
+.perfil-ocorrencia small { color: #8496a2; }
+.perfil-ocorrencia-final { display: flex; align-items: flex-end; flex-direction: column; gap: 13px; }
+.perfil-ocorrencia-final > a { color: #e9510d; font-weight: 850; }
+.perfil-status { padding: 7px 10px; border-radius: 999px; font-size: 10px; font-weight: 900; text-transform: uppercase; }
+.perfil-status.aberto { color: #991b1b; background: #fee2e2; }
+.perfil-status.em_andamento { color: #92400e; background: #fef3c7; }
+.perfil-status.resolvido { color: #166534; background: #dcfce7; }
+
+.perfil-sem-ocorrencias { padding: 38px 20px; display: flex; align-items: center; flex-direction: column; gap: 10px; color: #668093; text-align: center; }
+.perfil-sem-ocorrencias h3,.perfil-sem-ocorrencias p { margin: 0; }
+.perfil-sem-ocorrencias a { margin-top: 10px; }
+
+@media (max-width: 900px) {
+  .perfil-metricas { grid-template-columns: repeat(2,1fr); }
+  .perfil-conteudo { grid-template-columns: 1fr; }
+  .perfil-cabecalho { align-items: flex-start; flex-wrap: wrap; }
+  .perfil-sair { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .perfil-pagina { padding: 28px 16px 125px; }
+  .perfil-cabecalho { padding: 22px; flex-direction: column; text-align: center; }
+  .perfil-avatar { margin: 0 auto; }
+  .perfil-identificacao,.perfil-selo { margin-left: auto; margin-right: auto; }
+  .perfil-metricas { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .perfil-metricas article { min-height: 112px; padding: 15px; }
+  .perfil-informacoes,.perfil-formulario,.perfil-historico { padding: 19px; }
+  .perfil-historico-topo { align-items: stretch; flex-direction: column; }
+  .perfil-historico-topo > a { text-align: center; }
+  .perfil-ocorrencia { grid-template-columns: 82px minmax(0,1fr); }
+  .perfil-ocorrencia > img,.perfil-ocorrencia-sem-foto { width: 82px; height: 82px; }
+  .perfil-ocorrencia-final { grid-column: 1/-1; align-items: center; flex-direction: row; justify-content: space-between; }
+}

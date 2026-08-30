@@ -1,0 +1,57 @@
+/* Acabamento final da tela de login */
+
+@media (min-width: 981px) {
+  .auth-layout {
+    background: #ffffff !important;
+  }
+
+  .auth-layout .auth-cartao,
+  .auth-layout .auth-apresentacao {
+    background: #ffffff !important;
+  }
+
+  .auth-layout .auth-apresentacao::before,
+  .auth-layout .auth-apresentacao::after {
+    display: none !important;
+  }
+
+  .auth-layout .auth-cartao > .auth-icone,
+  .auth-layout .auth-cartao > .auth-etiqueta,
+  .auth-layout .auth-cartao > h1,
+  .auth-layout .auth-cartao > p {
+    display: none !important;
+  }
+
+  .auth-layout .auth-cartao {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+    justify-content: center !important;
+  }
+
+  .auth-layout .auth-cartao form > label:first-of-type {
+    margin-top: 0 !important;
+  }
+
+  .auth-layout .auth-apresentacao > img {
+    mix-blend-mode: normal !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .auth-layout,
+  .auth-layout .auth-cartao,
+  .auth-layout .auth-apresentacao {
+    background: #ffffff !important;
+  }
+
+  .auth-layout .auth-cartao > .auth-icone,
+  .auth-layout .auth-cartao > .auth-etiqueta,
+  .auth-layout .auth-cartao > h1,
+  .auth-layout .auth-cartao > p {
+    display: none !important;
+  }
+
+  .auth-layout .auth-apresentacao > img {
+    mix-blend-mode: normal !important;
+  }
+}
