@@ -109,35 +109,49 @@
   flex-shrink: 0 !important;
 }
 
-/* Impede textos duplicados criados por outros arquivos CSS */
+/* Remove textos duplicados criados pelos estilos antigos */
 .cabecalho .menu a::before,
 .cabecalho .menu a::after {
   content: none !important;
   display: none !important;
 }
 
-/* Celulares e tablets */
-@media (max-width: 768px) {
+/*
+ * Navegação para celulares e tablets.
+ * O limite de 1100px também atende aparelhos que informam
+ * uma largura maior ao navegador.
+ */
+@media (max-width: 1100px) {
   .aplicacao {
-    padding-bottom: 88px !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    padding-bottom: calc(92px + env(safe-area-inset-bottom)) !important;
   }
 
   .aplicacao .cabecalho {
+    width: 100% !important;
     min-height: 68px !important;
     padding: 8px 16px !important;
     position: sticky !important;
     top: 0 !important;
+    z-index: 8000 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    flex-direction: row !important;
     gap: 0 !important;
   }
 
   .aplicacao .cabecalho .logo {
+    width: auto !important;
     max-width: 100% !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    gap: 10px !important;
     visibility: visible !important;
     opacity: 1 !important;
   }
@@ -145,10 +159,29 @@
   .aplicacao .cabecalho .logo-imagem {
     width: 48px !important;
     height: 48px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .aplicacao .cabecalho .logo > div {
+    display: grid !important;
+    gap: 3px !important;
+    visibility: visible !important;
   }
 
   .aplicacao .cabecalho .logo strong {
+    display: block !important;
+    color: #ffffff !important;
     font-size: 17px !important;
+    visibility: visible !important;
+  }
+
+  .aplicacao .cabecalho .logo small {
+    display: block !important;
+    color: #b8cedc !important;
+    font-size: 10px !important;
+    visibility: visible !important;
   }
 
   .aplicacao .cabecalho .menu {
@@ -159,6 +192,7 @@
     left: 10px !important;
     z-index: 9999 !important;
     width: auto !important;
+    min-height: 67px !important;
     height: auto !important;
     margin: 0 !important;
     padding: 7px !important;
@@ -168,19 +202,25 @@
     box-shadow: 0 15px 38px rgba(6, 35, 59, 0.35) !important;
     -webkit-backdrop-filter: blur(15px) !important;
     backdrop-filter: blur(15px) !important;
+    overflow: visible !important;
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     align-items: stretch !important;
+    justify-content: stretch !important;
     gap: 5px !important;
   }
 
   .aplicacao .cabecalho .menu a {
+    width: 100% !important;
     min-width: 0 !important;
     min-height: 52px !important;
     margin: 0 !important;
     padding: 6px 3px !important;
     border: 0 !important;
     border-radius: 12px !important;
+    color: #b9ccda !important;
+    background: transparent !important;
+    box-shadow: none !important;
     display: inline-flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -192,6 +232,19 @@
     text-align: center !important;
     white-space: nowrap !important;
     overflow: hidden !important;
+    transform: none !important;
+  }
+
+  .aplicacao .cabecalho .menu a svg {
+    width: 19px !important;
+    height: 19px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .aplicacao .cabecalho .menu a::before,
+  .aplicacao .cabecalho .menu a::after {
+    content: none !important;
+    display: none !important;
   }
 
   .aplicacao .cabecalho .menu a:hover {
@@ -200,21 +253,23 @@
 
   .aplicacao .cabecalho .menu a.menu-ativo,
   .aplicacao .cabecalho .menu a[aria-current="page"] {
-    border: 0 !important;
     color: #ffffff !important;
+    border: 0 !important;
     background: linear-gradient(135deg, #ff8126, #ff5a00) !important;
     box-shadow: 0 7px 17px rgba(255, 90, 0, 0.25) !important;
   }
 
-  .aplicacao .cabecalho .menu a::before,
-  .aplicacao .cabecalho .menu a::after {
-    content: none !important;
-    display: none !important;
+  .aplicacao .cabecalho .menu a:active {
+    transform: scale(0.96) !important;
+  }
+
+  .aplicacao .cabecalho .menu a[href="/admin"]:only-child {
+    grid-column: 1 / -1 !important;
   }
 }
 
-/* Celulares pequenos */
-@media (max-width: 390px) {
+/* Aparelhos menores */
+@media (max-width: 420px) {
   .aplicacao .cabecalho {
     padding: 8px 12px !important;
   }
@@ -226,11 +281,13 @@
   .aplicacao .cabecalho .menu {
     right: 7px !important;
     left: 7px !important;
+    padding: 6px !important;
     gap: 3px !important;
   }
 
   .aplicacao .cabecalho .menu a {
-    padding: 6px 2px !important;
+    min-height: 50px !important;
+    padding: 5px 2px !important;
     font-size: 9px !important;
   }
 
