@@ -1,377 +1,560 @@
-/* ========================================
-   CABEÇALHO NO COMPUTADOR
-======================================== */
+/*
+ * CABEÇALHO DO MEU BAIRRO
+ *
+ * Todas as classes deste arquivo usam o prefixo "mb-".
+ * Isso impede conflitos com as regras antigas de:
+ *
+ * .cabecalho
+ * .menu
+ * .logo
+ *
+ * Não crie nomes de menu usando ::after.
+ */
 
-.cabecalho {
-  width: 100% !important;
-  min-height: 74px !important;
-  padding: 9px max(24px, calc((100vw - 1440px) / 2)) !important;
+/* =====================================================
+   ESTRUTURA GERAL
+===================================================== */
 
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 2000 !important;
-
-  border-bottom: 2px solid rgba(255, 100, 19, 0.92) !important;
-  background: rgba(6, 35, 59, 0.97) !important;
-  box-shadow: 0 8px 28px rgba(6, 35, 59, 0.2) !important;
-
-  -webkit-backdrop-filter: blur(14px) !important;
-  backdrop-filter: blur(14px) !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  flex-direction: row !important;
-  gap: 28px !important;
+.mb-aplicacao {
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
 }
 
-.cabecalho .logo {
-  width: auto !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  flex-direction: row !important;
-  gap: 12px !important;
-
-  text-decoration: none !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.mb-cabecalho-desktop,
+.mb-cabecalho-mobile,
+.mb-menu-mobile {
+  box-sizing: border-box;
 }
 
-.cabecalho .logo-imagem {
-  width: 52px !important;
-  height: 52px !important;
-  flex-shrink: 0 !important;
-
-  border-radius: 15px !important;
-  object-fit: contain !important;
-
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-
-  filter: drop-shadow(0 5px 11px rgba(0, 0, 0, 0.18)) !important;
+.mb-cabecalho-desktop *,
+.mb-cabecalho-mobile *,
+.mb-menu-mobile * {
+  box-sizing: border-box;
 }
 
-.cabecalho .logo > div {
-  min-width: 0 !important;
+/* =====================================================
+   CABEÇALHO DESKTOP
+===================================================== */
 
-  display: grid !important;
-  gap: 3px !important;
+.mb-cabecalho-desktop {
+  width: 100%;
+  min-height: 74px;
+  padding:
+    9px
+    max(
+      24px,
+      calc((100vw - 1440px) / 2)
+    );
 
-  visibility: visible !important;
-  opacity: 1 !important;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+
+  border-bottom: 2px solid
+    rgba(255, 100, 19, 0.92);
+
+  background: rgba(6, 35, 59, 0.98);
+
+  box-shadow:
+    0 8px 28px
+    rgba(6, 35, 59, 0.2);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
 }
 
-.cabecalho .logo strong {
-  color: #ffffff !important;
-  font-size: 18px !important;
-  font-weight: 800 !important;
-  line-height: 1 !important;
-  letter-spacing: -0.25px !important;
+.mb-logo {
+  min-width: 0;
+  padding: 0;
 
-  display: block !important;
-  visibility: visible !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: inherit;
+  text-decoration: none;
 }
 
-.cabecalho .logo small {
-  color: #b8cedc !important;
-  font-size: 10px !important;
-  line-height: 1.2 !important;
+.mb-logo-imagem {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
 
-  display: block !important;
-  visibility: visible !important;
+  border-radius: 15px;
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 5px 11px
+      rgba(0, 0, 0, 0.18)
+    );
 }
 
-.cabecalho .menu {
-  width: auto !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 5px !important;
+.mb-logo-texto {
+  min-width: 0;
 
-  position: static !important;
-
-  border: 1px solid rgba(184, 206, 220, 0.15) !important;
-  border-radius: 14px !important;
-  background: rgba(255, 255, 255, 0.055) !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  flex-direction: row !important;
-  gap: 4px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.cabecalho .menu a {
-  width: auto !important;
-  min-width: 0 !important;
-  min-height: 42px !important;
-  margin: 0 !important;
-  padding: 10px 15px !important;
-
-  border: 1px solid transparent !important;
-  border-radius: 10px !important;
-
-  color: #d9e6ee !important;
-  background: transparent !important;
-  box-shadow: none !important;
-
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-direction: row !important;
-  gap: 8px !important;
-
-  font-size: 13px !important;
-  font-weight: 750 !important;
-  line-height: 1.1 !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
+.mb-logo-texto strong {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.25px;
 }
 
-.cabecalho .menu a span {
-  display: inline !important;
+.mb-logo-texto small {
+  color: #b8cedc;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.015em;
 }
 
-.cabecalho .menu a svg {
-  width: 18px !important;
-  height: 18px !important;
-  flex-shrink: 0 !important;
+/* =====================================================
+   MENU DESKTOP
+===================================================== */
+
+.mb-menu-desktop {
+  padding: 5px;
+
+  border:
+    1px solid
+    rgba(184, 206, 220, 0.15);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.cabecalho .menu a:hover {
-  color: #ffffff !important;
-  border-color: rgba(255, 129, 38, 0.3) !important;
-  background: rgba(255, 129, 38, 0.11) !important;
+.mb-link-menu {
+  min-height: 42px;
+  padding: 10px 15px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  color: #d9e6ee;
+  background: transparent;
+
+  box-shadow: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
-.cabecalho .menu a.menu-ativo,
-.cabecalho .menu a[aria-current="page"] {
-  color: #ffffff !important;
-  border-color: #ff8126 !important;
-  background: linear-gradient(135deg, #ff8126, #ff5a00) !important;
-  box-shadow: 0 7px 17px rgba(255, 90, 0, 0.25) !important;
+.mb-link-menu:hover {
+  color: #ffffff;
+
+  border-color:
+    rgba(255, 129, 38, 0.3);
+
+  background:
+    rgba(255, 129, 38, 0.11);
+
+  transform: translateY(-1px);
 }
 
-/* Remove textos duplicados criados por CSS antigo */
-.cabecalho .menu a::before,
-.cabecalho .menu a::after {
-  content: none !important;
-  display: none !important;
+.mb-link-menu.mb-link-ativo {
+  color: #ffffff;
+
+  border-color: #ff8126;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff8126,
+      #ff5a00
+    );
+
+  box-shadow:
+    0 7px 17px
+    rgba(255, 90, 0, 0.25);
 }
 
-/* ========================================
-   LAYOUT FORÇADO PELO REACT NO CELULAR
-======================================== */
-
-.aplicacao.dispositivo-movel {
-  width: 100% !important;
-  min-height: 100vh !important;
-  padding-bottom: calc(94px + env(safe-area-inset-bottom)) !important;
-  overflow-x: hidden !important;
+.mb-link-menu svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke-width: 2.2;
 }
 
-.aplicacao.dispositivo-movel .cabecalho {
-  width: 100% !important;
-  min-height: 68px !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 8px 16px !important;
+/* =====================================================
+   ELEMENTOS MOBILE ESCONDIDOS NO DESKTOP
+===================================================== */
 
-  position: sticky !important;
-  top: 0 !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-  z-index: 8000 !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-direction: row !important;
-  gap: 0 !important;
+.mb-cabecalho-mobile,
+.mb-menu-mobile {
+  display: none;
 }
 
-.aplicacao.dispositivo-movel .cabecalho .logo {
-  width: auto !important;
-  max-width: 100% !important;
-  min-height: 50px !important;
-  margin: 0 !important;
-  padding: 0 !important;
+/* =====================================================
+   TABLET
+===================================================== */
 
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-direction: row !important;
-  gap: 10px !important;
-
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .logo-imagem {
-  width: 48px !important;
-  height: 48px !important;
-
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .logo > div {
-  display: grid !important;
-  gap: 3px !important;
-
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .logo strong {
-  color: #ffffff !important;
-  font-size: 17px !important;
-
-  display: block !important;
-  visibility: visible !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .logo small {
-  color: #b8cedc !important;
-  font-size: 10px !important;
-
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* Menu inferior */
-.aplicacao.dispositivo-movel .cabecalho .menu {
-  position: fixed !important;
-  top: auto !important;
-  right: 10px !important;
-  bottom: calc(9px + env(safe-area-inset-bottom)) !important;
-  left: 10px !important;
-  z-index: 9999 !important;
-
-  width: auto !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  min-height: 67px !important;
-  height: auto !important;
-
-  margin: 0 !important;
-  padding: 7px !important;
-
-  border: 1px solid rgba(255, 129, 38, 0.34) !important;
-  border-radius: 18px !important;
-
-  background: rgba(6, 35, 59, 0.98) !important;
-  box-shadow: 0 15px 38px rgba(6, 35, 59, 0.35) !important;
-
-  -webkit-backdrop-filter: blur(15px) !important;
-  backdrop-filter: blur(15px) !important;
-
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  align-items: stretch !important;
-  justify-content: stretch !important;
-  gap: 5px !important;
-
-  overflow: visible !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .menu a {
-  width: 100% !important;
-  min-width: 0 !important;
-  min-height: 52px !important;
-  height: auto !important;
-
-  margin: 0 !important;
-  padding: 6px 3px !important;
-
-  border: 0 !important;
-  border-radius: 12px !important;
-
-  color: #b9ccda !important;
-  background: transparent !important;
-  box-shadow: none !important;
-
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-direction: column !important;
-  gap: 4px !important;
-
-  font-size: 10px !important;
-  font-weight: 750 !important;
-  line-height: 1.1 !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-
-  overflow: hidden !important;
-  transform: none !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .menu a span {
-  display: block !important;
-  font-size: 10px !important;
-  line-height: 1.1 !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .menu a svg {
-  width: 19px !important;
-  height: 19px !important;
-  flex-shrink: 0 !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .menu a::before,
-.aplicacao.dispositivo-movel .cabecalho .menu a::after {
-  content: none !important;
-  display: none !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .menu a.menu-ativo,
-.aplicacao.dispositivo-movel .cabecalho .menu a[aria-current="page"] {
-  color: #ffffff !important;
-  border: 0 !important;
-  background: linear-gradient(135deg, #ff8126, #ff5a00) !important;
-  box-shadow: 0 7px 17px rgba(255, 90, 0, 0.25) !important;
-}
-
-.aplicacao.dispositivo-movel .cabecalho .menu a[href="/admin"]:only-child {
-  grid-column: 1 / -1 !important;
-}
-
-/* Celulares menores */
-@media (max-width: 420px) {
-  .aplicacao.dispositivo-movel .cabecalho {
-    padding: 8px 12px !important;
+@media (min-width: 769px) and (max-width: 950px) {
+  .mb-cabecalho-desktop {
+    padding-right: 18px;
+    padding-left: 18px;
+    gap: 16px;
   }
 
-  .aplicacao.dispositivo-movel .cabecalho .logo small {
-    display: none !important;
+  .mb-logo-texto small {
+    display: none;
   }
 
-  .aplicacao.dispositivo-movel .cabecalho .menu {
-    right: 7px !important;
-    left: 7px !important;
-    padding: 6px !important;
-    gap: 3px !important;
+  .mb-menu-desktop {
+    gap: 2px;
   }
 
-  .aplicacao.dispositivo-movel .cabecalho .menu a {
-    min-height: 50px !important;
-    padding: 5px 2px !important;
+  .mb-link-menu {
+    padding-right: 10px;
+    padding-left: 10px;
+    gap: 6px;
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
-  .aplicacao.dispositivo-movel .cabecalho .menu a span {
-    font-size: 9px !important;
+  /*
+   * Reserva espaço para o menu inferior.
+   * O conteúdo não ficará escondido atrás dele.
+   */
+  .mb-aplicacao {
+    min-height: 100dvh;
+
+    padding-bottom:
+      calc(
+        91px +
+        env(safe-area-inset-bottom)
+      );
   }
 
-  .aplicacao.dispositivo-movel .cabecalho .menu a svg {
-    width: 17px !important;
-    height: 17px !important;
+  /*
+   * O cabeçalho desktop desaparece completamente.
+   */
+  .mb-cabecalho-desktop {
+    display: none;
+  }
+
+  /*
+   * Cabeçalho exclusivo do celular.
+   * Ele mostra somente a identidade do site.
+   */
+  .mb-cabecalho-mobile {
+    width: 100%;
+    min-height: 67px;
+    padding:
+      8px
+      max(
+        14px,
+        env(safe-area-inset-left)
+      );
+
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+
+    border-bottom:
+      2px solid
+      rgba(255, 100, 19, 0.92);
+
+    background:
+      rgba(6, 35, 59, 0.98);
+
+    box-shadow:
+      0 7px 22px
+      rgba(6, 35, 59, 0.22);
+
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mb-logo-mobile {
+    min-width: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .mb-logo-mobile-imagem {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    border-radius: 14px;
+    object-fit: contain;
+
+    filter:
+      drop-shadow(
+        0 4px 9px
+        rgba(0, 0, 0, 0.2)
+      );
+  }
+
+  .mb-logo-mobile-texto {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .mb-logo-mobile-texto strong {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .mb-logo-mobile-texto small {
+    color: #b8cedc;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  /*
+   * Menu exclusivo do celular.
+   * Ele fica sempre na parte inferior da tela.
+   */
+  .mb-menu-mobile {
+    right:
+      max(
+        10px,
+        env(safe-area-inset-right)
+      );
+
+    bottom:
+      calc(
+        9px +
+        env(safe-area-inset-bottom)
+      );
+
+    left:
+      max(
+        10px,
+        env(safe-area-inset-left)
+      );
+
+    z-index: 3000;
+    min-height: 70px;
+    padding: 7px;
+
+    position: fixed;
+
+    border:
+      1px solid
+      rgba(255, 129, 38, 0.38);
+
+    border-radius: 18px;
+
+    background:
+      rgba(6, 35, 59, 0.985);
+
+    box-shadow:
+      0 15px 38px
+      rgba(6, 35, 59, 0.38);
+
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+    display: grid;
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .mb-menu-mobile .mb-link-menu {
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+    padding: 6px 3px;
+
+    border: 0;
+    border-radius: 12px;
+
+    color: #c3d4df;
+    background: transparent;
+
+    box-shadow: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+
+    font-size: 10px;
+    font-weight: 750;
+    line-height: 1;
+
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+
+    transform: none;
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      transform 100ms ease;
+  }
+
+  .mb-menu-mobile .mb-link-menu:hover {
+    color: #ffffff;
+    border: 0;
+    background:
+      rgba(255, 129, 38, 0.1);
+    transform: none;
+  }
+
+  .mb-menu-mobile .mb-link-menu.mb-link-ativo {
+    color: #ffffff;
+
+    border: 0;
+
+    background:
+      linear-gradient(
+        135deg,
+        #ff8126,
+        #ff5a00
+      );
+
+    box-shadow:
+      0 7px 16px
+      rgba(255, 90, 0, 0.28);
+  }
+
+  .mb-menu-mobile .mb-link-menu:active {
+    transform: scale(0.96);
+  }
+
+  .mb-menu-mobile .mb-link-menu svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke-width: 2.25;
+  }
+
+  .mb-menu-mobile .mb-link-menu span {
+    display: block;
+
+    max-width: 100%;
+
+    color: inherit;
+    font-size: 10px;
+    font-weight: 750;
+    line-height: 1.1;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /*
+   * Quando o usuário for administrador,
+   * o botão ocupa toda a barra.
+   */
+  .mb-menu-mobile-admin {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 390px) {
+  .mb-cabecalho-mobile {
+    min-height: 64px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .mb-logo-mobile-imagem {
+    width: 45px;
+    height: 45px;
+  }
+
+  .mb-logo-mobile-texto strong {
+    font-size: 16px;
+  }
+
+  .mb-logo-mobile-texto small {
+    display: none;
+  }
+
+  .mb-menu-mobile {
+    right: 7px;
+    left: 7px;
+    padding: 6px;
+    gap: 3px;
+  }
+
+  .mb-menu-mobile .mb-link-menu {
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+
+  .mb-menu-mobile .mb-link-menu span {
+    font-size: 9px;
+  }
+
+  .mb-menu-mobile .mb-link-menu svg {
+    width: 19px;
+    height: 19px;
   }
 }
