@@ -1,11 +1,12 @@
 /* ========================================
-   CABEÇALHO — COMPUTADOR
+   CABEÇALHO NO COMPUTADOR
 ======================================== */
 
 .cabecalho {
   width: 100% !important;
   min-height: 74px !important;
   padding: 9px max(24px, calc((100vw - 1440px) / 2)) !important;
+
   position: sticky !important;
   top: 0 !important;
   z-index: 2000 !important;
@@ -24,10 +25,6 @@
   gap: 28px !important;
 }
 
-/* ========================================
-   LOGO
-======================================== */
-
 .cabecalho .logo {
   width: auto !important;
   min-width: 0 !important;
@@ -37,6 +34,7 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
+  flex-direction: row !important;
   gap: 12px !important;
 
   text-decoration: none !important;
@@ -84,15 +82,10 @@
   color: #b8cedc !important;
   font-size: 10px !important;
   line-height: 1.2 !important;
-  letter-spacing: 0.015em !important;
 
   display: block !important;
   visibility: visible !important;
 }
-
-/* ========================================
-   MENU — COMPUTADOR
-======================================== */
 
 .cabecalho .menu {
   width: auto !important;
@@ -138,12 +131,10 @@
   line-height: 1.1 !important;
   text-decoration: none !important;
   white-space: nowrap !important;
+}
 
-  transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease !important;
+.cabecalho .menu a span {
+  display: inline !important;
 }
 
 .cabecalho .menu a svg {
@@ -156,7 +147,6 @@
   color: #ffffff !important;
   border-color: rgba(255, 129, 38, 0.3) !important;
   background: rgba(255, 129, 38, 0.11) !important;
-  transform: translateY(-1px) !important;
 }
 
 .cabecalho .menu a.menu-ativo,
@@ -167,7 +157,7 @@
   box-shadow: 0 7px 17px rgba(255, 90, 0, 0.25) !important;
 }
 
-/* Remove os nomes duplicados criados pelos arquivos antigos */
+/* Remove textos duplicados criados por CSS antigo */
 .cabecalho .menu a::before,
 .cabecalho .menu a::after {
   content: none !important;
@@ -175,236 +165,212 @@
 }
 
 /* ========================================
-   CELULARES E DISPOSITIVOS COM TOQUE
+   LAYOUT FORÇADO PELO REACT NO CELULAR
 ======================================== */
 
-@media (max-width: 1100px), (hover: none) and (pointer: coarse) {
-  html,
-  body,
-  #root {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .aplicacao {
-    width: 100% !important;
-    min-height: 100vh !important;
-
-    /* Espaço para o menu inferior */
-    padding-bottom: calc(94px + env(safe-area-inset-bottom)) !important;
-  }
-
-  /* Cabeçalho superior mostra somente a identidade do site */
-  .aplicacao .cabecalho {
-    width: 100% !important;
-    min-height: 68px !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 8px 16px !important;
-
-    position: sticky !important;
-    top: 0 !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    z-index: 8000 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    gap: 0 !important;
-  }
-
-  /* Logo visível no topo */
-  .aplicacao .cabecalho .logo {
-    width: auto !important;
-    max-width: 100% !important;
-    min-height: 50px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .aplicacao .cabecalho .logo-imagem {
-    width: 48px !important;
-    height: 48px !important;
-
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .aplicacao .cabecalho .logo > div {
-    width: auto !important;
-
-    display: grid !important;
-    gap: 3px !important;
-
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .aplicacao .cabecalho .logo strong {
-    color: #ffffff !important;
-    font-size: 17px !important;
-    line-height: 1 !important;
-
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .aplicacao .cabecalho .logo small {
-    color: #b8cedc !important;
-    font-size: 10px !important;
-    line-height: 1.2 !important;
-
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* Menu fixado na parte inferior */
-  .aplicacao .cabecalho .menu {
-    position: fixed !important;
-    top: auto !important;
-    right: 10px !important;
-    bottom: calc(9px + env(safe-area-inset-bottom)) !important;
-    left: 10px !important;
-    z-index: 9999 !important;
-
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    min-height: 67px !important;
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 7px !important;
-
-    border: 1px solid rgba(255, 129, 38, 0.34) !important;
-    border-radius: 18px !important;
-
-    background: rgba(6, 35, 59, 0.98) !important;
-    box-shadow: 0 15px 38px rgba(6, 35, 59, 0.35) !important;
-
-    -webkit-backdrop-filter: blur(15px) !important;
-    backdrop-filter: blur(15px) !important;
-
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    align-items: stretch !important;
-    justify-content: stretch !important;
-    gap: 5px !important;
-
-    overflow: visible !important;
-  }
-
-  .aplicacao .cabecalho .menu a {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    min-height: 52px !important;
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 6px 3px !important;
-
-    border: 0 !important;
-    border-radius: 12px !important;
-
-    color: #b9ccda !important;
-    background: transparent !important;
-    box-shadow: none !important;
-
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: column !important;
-    gap: 4px !important;
-
-    font-size: 10px !important;
-    font-weight: 750 !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-    white-space: nowrap !important;
-
-    overflow: hidden !important;
-    transform: none !important;
-  }
-
-  .aplicacao .cabecalho .menu a svg {
-    width: 19px !important;
-    height: 19px !important;
-    flex-shrink: 0 !important;
-  }
-
-  /* Remove textos extras criados com ::after */
-  .aplicacao .cabecalho .menu a::before,
-  .aplicacao .cabecalho .menu a::after {
-    content: none !important;
-    display: none !important;
-  }
-
-  .aplicacao .cabecalho .menu a:hover {
-    color: #ffffff !important;
-    transform: none !important;
-  }
-
-  .aplicacao .cabecalho .menu a.menu-ativo,
-  .aplicacao .cabecalho .menu a[aria-current="page"] {
-    color: #ffffff !important;
-    border: 0 !important;
-    background: linear-gradient(135deg, #ff8126, #ff5a00) !important;
-    box-shadow: 0 7px 17px rgba(255, 90, 0, 0.25) !important;
-  }
-
-  .aplicacao .cabecalho .menu a:active {
-    transform: scale(0.96) !important;
-  }
-
-  .aplicacao .cabecalho .menu a[href="/admin"]:only-child {
-    grid-column: 1 / -1 !important;
-  }
+.aplicacao.dispositivo-movel {
+  width: 100% !important;
+  min-height: 100vh !important;
+  padding-bottom: calc(94px + env(safe-area-inset-bottom)) !important;
+  overflow-x: hidden !important;
 }
 
-/* ========================================
-   CELULARES PEQUENOS
-======================================== */
+.aplicacao.dispositivo-movel .cabecalho {
+  width: 100% !important;
+  min-height: 68px !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 8px 16px !important;
 
+  position: sticky !important;
+  top: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 8000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  gap: 0 !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .logo {
+  width: auto !important;
+  max-width: 100% !important;
+  min-height: 50px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .logo-imagem {
+  width: 48px !important;
+  height: 48px !important;
+
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .logo > div {
+  display: grid !important;
+  gap: 3px !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .logo strong {
+  color: #ffffff !important;
+  font-size: 17px !important;
+
+  display: block !important;
+  visibility: visible !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .logo small {
+  color: #b8cedc !important;
+  font-size: 10px !important;
+
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Menu inferior */
+.aplicacao.dispositivo-movel .cabecalho .menu {
+  position: fixed !important;
+  top: auto !important;
+  right: 10px !important;
+  bottom: calc(9px + env(safe-area-inset-bottom)) !important;
+  left: 10px !important;
+  z-index: 9999 !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 67px !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 7px !important;
+
+  border: 1px solid rgba(255, 129, 38, 0.34) !important;
+  border-radius: 18px !important;
+
+  background: rgba(6, 35, 59, 0.98) !important;
+  box-shadow: 0 15px 38px rgba(6, 35, 59, 0.35) !important;
+
+  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px) !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  gap: 5px !important;
+
+  overflow: visible !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .menu a {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 52px !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 6px 3px !important;
+
+  border: 0 !important;
+  border-radius: 12px !important;
+
+  color: #b9ccda !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+
+  font-size: 10px !important;
+  font-weight: 750 !important;
+  line-height: 1.1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+
+  overflow: hidden !important;
+  transform: none !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .menu a span {
+  display: block !important;
+  font-size: 10px !important;
+  line-height: 1.1 !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .menu a svg {
+  width: 19px !important;
+  height: 19px !important;
+  flex-shrink: 0 !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .menu a::before,
+.aplicacao.dispositivo-movel .cabecalho .menu a::after {
+  content: none !important;
+  display: none !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .menu a.menu-ativo,
+.aplicacao.dispositivo-movel .cabecalho .menu a[aria-current="page"] {
+  color: #ffffff !important;
+  border: 0 !important;
+  background: linear-gradient(135deg, #ff8126, #ff5a00) !important;
+  box-shadow: 0 7px 17px rgba(255, 90, 0, 0.25) !important;
+}
+
+.aplicacao.dispositivo-movel .cabecalho .menu a[href="/admin"]:only-child {
+  grid-column: 1 / -1 !important;
+}
+
+/* Celulares menores */
 @media (max-width: 420px) {
-  .aplicacao .cabecalho {
+  .aplicacao.dispositivo-movel .cabecalho {
     padding: 8px 12px !important;
   }
 
-  .aplicacao .cabecalho .logo small {
+  .aplicacao.dispositivo-movel .cabecalho .logo small {
     display: none !important;
   }
 
-  .aplicacao .cabecalho .menu {
+  .aplicacao.dispositivo-movel .cabecalho .menu {
     right: 7px !important;
     left: 7px !important;
     padding: 6px !important;
     gap: 3px !important;
   }
 
-  .aplicacao .cabecalho .menu a {
+  .aplicacao.dispositivo-movel .cabecalho .menu a {
     min-height: 50px !important;
     padding: 5px 2px !important;
+  }
+
+  .aplicacao.dispositivo-movel .cabecalho .menu a span {
     font-size: 9px !important;
   }
 
-  .aplicacao .cabecalho .menu a svg {
+  .aplicacao.dispositivo-movel .cabecalho .menu a svg {
     width: 17px !important;
     height: 17px !important;
   }

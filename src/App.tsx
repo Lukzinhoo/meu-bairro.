@@ -56,6 +56,15 @@ function App() {
   const [verificandoAcesso, setVerificandoAcesso] =
     useState(true);
 
+  const dispositivoMovel =
+    typeof navigator !== "undefined" &&
+    (
+      navigator.maxTouchPoints > 0 ||
+      /Android|iPhone|iPad|iPod|Mobile/i.test(
+        navigator.userAgent
+      )
+    );
+
   useEffect(() => {
     verificarUsuarioAtual();
 
@@ -137,7 +146,13 @@ function App() {
       <RolarParaTopo />
       <RegistrarVisita />
 
-      <div className="aplicacao">
+      <div
+        className={
+          dispositivoMovel
+            ? "aplicacao dispositivo-movel"
+            : "aplicacao"
+        }
+      >
         <header className="cabecalho">
           <Link
             to={administrador ? "/admin" : "/"}
@@ -169,7 +184,7 @@ function App() {
                   }
                 >
                   <House size={19} />
-                  Início
+                  <span>Início</span>
                 </NavLink>
 
                 <NavLink
@@ -179,7 +194,7 @@ function App() {
                   }
                 >
                   <Map size={19} />
-                  Mapa
+                  <span>Mapa</span>
                 </NavLink>
 
                 <NavLink
@@ -189,7 +204,7 @@ function App() {
                   }
                 >
                   <ClipboardList size={19} />
-                  Ocorrências
+                  <span>Ocorrências</span>
                 </NavLink>
 
                 <NavLink
@@ -204,9 +219,11 @@ function App() {
                 >
                   <CircleUserRound size={19} />
 
-                  {usuario
-                    ? "Perfil"
-                    : "Entrar"}
+                  <span>
+                    {usuario
+                      ? "Perfil"
+                      : "Entrar"}
+                  </span>
                 </NavLink>
               </>
             )}
@@ -219,7 +236,7 @@ function App() {
                 }
               >
                 <ShieldCheck size={19} />
-                Admin
+                <span>Admin</span>
               </NavLink>
             )}
           </nav>
@@ -280,8 +297,13 @@ function App() {
                   to="/admin"
                   replace
                 />
-              ) : (
+              ) : usuario ? (
                 <Perfil />
+              ) : (
+                <Navigate
+                  to="/entrar"
+                  replace
+                />
               )
             }
           />
