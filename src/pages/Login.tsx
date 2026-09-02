@@ -12,6 +12,8 @@ import {
 import mascoteMeuBairro from "../assets/hero-mascote-login-branco.png";
 import "./Auth.css";
 import "./LoginMascote.css";
+import "./LoginFinal.css";
+
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
