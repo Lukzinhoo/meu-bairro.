@@ -394,7 +394,27 @@ function Login() {
         {!modoAdministrador && (
           <div className="auth-rodape"><span>Ainda não possui uma conta?</span><Link to="/cadastro">Criar conta</Link></div>
         )}
-      </section>
+           </section>
+
+      <aside className="login-mobile-mascote">
+        <div className="login-mobile-mascote-texto">
+          <span>Comunidade conectada</span>
+
+          <h2>Bem-vindo ao Meu Bairro</h2>
+
+          <p>
+            Registre, acompanhe e participe das
+            melhorias da sua comunidade.
+          </p>
+        </div>
+
+        <div className="login-mobile-mascote-imagem">
+          <img
+            src={mascoteMeuBairro}
+            alt="Mascote do Meu Bairro"
+          />
+        </div>
+      </aside>
       </div>
     </main>
   );

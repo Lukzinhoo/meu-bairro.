@@ -1,10 +1,16 @@
 /*
- * ACABAMENTO FINAL DA TELA DE LOGIN
+ * ACABAMENTO FINAL DO LOGIN
  *
- * O desktop mantém o layout original.
- * Somente o mascote no celular recebe
- * uma apresentação menor e profissional.
+ * O desktop mantém a apresentação original.
+ * No celular, a apresentação antiga é escondida
+ * e um componente exclusivo é utilizado.
  */
+
+/* O card mobile não aparece no computador */
+
+.login-mobile-mascote {
+  display: none;
+}
 
 /* =====================================================
    DESKTOP — MANTÉM O VISUAL ORIGINAL
@@ -61,7 +67,7 @@
 }
 
 /* =====================================================
-   TABLET — MANTÉM O VISUAL ORIGINAL
+   TABLET
 ===================================================== */
 
 @media (min-width: 551px) and (max-width: 980px) {
@@ -94,7 +100,7 @@
 }
 
 /* =====================================================
-   CELULAR — FORMULÁRIO PRIMEIRO
+   CELULAR
 ===================================================== */
 
 @media (max-width: 550px) {
@@ -137,7 +143,15 @@
   }
 
   /*
-   * O formulário fica na primeira posição.
+   * Esconde completamente a apresentação antiga.
+   * As regras antigas deixam de interferir.
+   */
+  .auth-layout > .auth-apresentacao {
+    display: none !important;
+  }
+
+  /*
+   * Formulário.
    */
   .auth-layout .auth-cartao {
     order: 1 !important;
@@ -159,9 +173,6 @@
     box-shadow: none !important;
   }
 
-  /*
-   * Mantém as informações do formulário.
-   */
   .auth-layout
     .auth-cartao
     > .auth-icone {
@@ -214,162 +225,166 @@
     justify-content: flex-start !important;
   }
 
-  .auth-layout .auth-localizacao,
-  .auth-layout .auth-google,
-  .auth-layout .auth-entrar-admin {
-    font-size: 13px !important;
-  }
-
   /*
-   * O painel do mascote fica compacto
-   * abaixo do formulário.
+   * Novo card exclusivo do celular.
    */
-  .auth-layout .auth-apresentacao {
-    order: 2 !important;
+  .login-mobile-mascote {
+    order: 2;
 
-    width: 100% !important;
-    min-height: 178px !important;
-    padding:
-      21px
-      18px
-      16px !important;
+    width: 100%;
+    min-height: 156px;
+    padding: 19px 15px 15px 18px;
 
-    position: relative !important;
-    isolation: isolate !important;
-    overflow: hidden !important;
+    position: relative;
+    overflow: hidden;
 
-    border: 0 !important;
-
+    border: 0;
     border-top:
       1px solid
-      rgba(226, 181, 140, 0.58) !important;
-
-    border-radius: 0 !important;
+      rgba(226, 181, 140, 0.58);
 
     background:
       radial-gradient(
-        circle at 90% 80%,
-        rgba(255, 129, 38, 0.14),
-        transparent 39%
+        circle at 90% 78%,
+        rgba(255, 129, 38, 0.15),
+        transparent 40%
       ),
       linear-gradient(
         145deg,
         #fffdf9,
-        #fff3e5
-      ) !important;
+        #fff2e2
+      );
 
-    box-shadow: none !important;
-
-    display: grid !important;
-
+    display: grid;
     grid-template-columns:
       minmax(0, 1fr)
-      110px !important;
+      112px;
 
-    align-items: center !important;
-    gap: 9px !important;
+    align-items: center;
+    gap: 9px;
   }
 
-  .auth-layout
-    .auth-apresentacao::before,
-  .auth-layout
-    .auth-apresentacao::after {
-    display: none !important;
+  .login-mobile-mascote::after {
+    content: "";
+
+    width: 130px;
+    height: 130px;
+
+    position: absolute;
+    right: -52px;
+    bottom: -65px;
+
+    border-radius: 50%;
+
+    background:
+      rgba(99, 179, 46, 0.08);
+
+    pointer-events: none;
   }
 
-  .auth-apresentacao-texto {
-    min-width: 0 !important;
-    max-width: none !important;
+  .login-mobile-mascote-texto {
+    min-width: 0;
 
-    position: relative !important;
-    z-index: 2 !important;
+    position: relative;
+    z-index: 2;
   }
 
-  .auth-apresentacao-texto > span {
-    width: max-content !important;
-    max-width: 100% !important;
-    padding: 5px 7px !important;
+  .login-mobile-mascote-texto > span {
+    width: max-content;
+    max-width: 100%;
+    padding: 5px 7px;
 
     border:
       1px solid
-      rgba(255, 90, 0, 0.18) !important;
+      rgba(255, 90, 0, 0.18);
 
-    border-radius: 999px !important;
+    border-radius: 999px;
 
-    color: #c6480e !important;
-
+    color: #c6480e;
     background:
-      rgba(255, 255, 255, 0.78) !important;
+      rgba(255, 255, 255, 0.82);
 
-    display: inline-flex !important;
+    display: inline-flex;
 
-    font-size: 8px !important;
-    font-weight: 850 !important;
-    line-height: 1 !important;
-    letter-spacing: 0.07em !important;
-    text-transform: uppercase !important;
+    font-size: 8px;
+    font-weight: 850;
+    line-height: 1;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
   }
 
-  .auth-apresentacao h2 {
-    max-width: 190px !important;
-    margin: 9px 0 7px !important;
+  .login-mobile-mascote-texto h2 {
+    max-width: 190px;
+    margin: 9px 0 6px;
 
-    color: #08243a !important;
+    color: #08243a;
 
-    font-size: 22px !important;
-    line-height: 1.05 !important;
-    letter-spacing: -0.7px !important;
+    font-size: 21px;
+    font-weight: 850;
+    line-height: 1.05;
+    letter-spacing: -0.65px;
   }
 
-  .auth-apresentacao p {
-    max-width: 205px !important;
-    margin: 0 !important;
+  .login-mobile-mascote-texto p {
+    max-width: 205px;
+    margin: 0;
 
-    color: #587083 !important;
+    color: #587083;
 
-    font-size: 10px !important;
-    line-height: 1.4 !important;
+    font-size: 10px;
+    line-height: 1.4;
   }
 
   /*
-   * Imagem reduzida e sem cortes.
+   * A caixa funciona como uma janela.
+   * Ela recorta o grande fundo branco da imagem.
    */
-  .auth-layout
-    .auth-apresentacao
-    > img {
-    width: 110px !important;
-    max-width: 110px !important;
-    height: 136px !important;
-    margin: 0 !important;
+  .login-mobile-mascote-imagem {
+    width: 112px;
+    height: 130px;
 
-    grid-column: 2 !important;
-    grid-row: 1 !important;
+    position: relative;
+    z-index: 2;
 
-    align-self: end !important;
+    align-self: end;
+    overflow: hidden;
 
-    display: block !important;
+    border-radius: 16px;
 
-    object-fit: contain !important;
+    background:
+      linear-gradient(
+        145deg,
+        #fffaf4,
+        #fff0df
+      );
+  }
 
-    object-position:
-      center bottom !important;
+  .login-mobile-mascote-imagem img {
+    width: 210px;
+    max-width: none;
+    height: 130px;
 
-    mix-blend-mode: normal !important;
+    position: absolute;
+    right: -6px;
+    bottom: 0;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: 76% center;
+
+    mix-blend-mode: normal;
 
     filter:
       drop-shadow(
-        0 10px 14px
-        rgba(65, 38, 18, 0.12)
-      ) !important;
-  }
-
-  .auth-apresentacao-destaques {
-    display: none !important;
+        0 9px 12px
+        rgba(65, 38, 18, 0.11)
+      );
   }
 }
 
 /* =====================================================
-   CELULARES MUITO PEQUENOS
+   CELULARES PEQUENOS
 ===================================================== */
 
 @media (max-width: 360px) {
@@ -378,28 +393,30 @@
     padding-left: 16px !important;
   }
 
-  .auth-layout .auth-apresentacao {
-    padding-right: 14px !important;
-    padding-left: 14px !important;
+  .login-mobile-mascote {
+    padding-right: 12px;
+    padding-left: 14px;
 
     grid-template-columns:
       minmax(0, 1fr)
-      90px !important;
+      92px;
   }
 
-  .auth-layout
-    .auth-apresentacao
-    > img {
-    width: 90px !important;
-    max-width: 90px !important;
-    height: 122px !important;
+  .login-mobile-mascote-imagem {
+    width: 92px;
+    height: 120px;
   }
 
-  .auth-apresentacao h2 {
-    font-size: 20px !important;
+  .login-mobile-mascote-imagem img {
+    width: 190px;
+    height: 120px;
   }
 
-  .auth-apresentacao p {
-    font-size: 9px !important;
+  .login-mobile-mascote-texto h2 {
+    font-size: 19px;
+  }
+
+  .login-mobile-mascote-texto p {
+    font-size: 9px;
   }
 }
