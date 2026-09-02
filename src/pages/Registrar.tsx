@@ -984,6 +984,27 @@ function Registrar() {
     let nomeArquivoVideo = "";
 
     try {
+      setEtapaEnvio(
+        "Verificando sua conta..."
+      );
+
+      const {
+        data: { user },
+        error: erroUsuario,
+      } = await supabase.auth.getUser();
+
+      if (erroUsuario) {
+        throw new Error(
+          `Não foi possível verificar sua conta: ${erroUsuario.message}`
+        );
+      }
+
+      if (!user) {
+        throw new Error(
+          "Entre na sua conta antes de registrar uma ocorrência."
+        );
+      }
+
       let localOcorrencia: Coordenadas;
 
       if (coordenadas) {
@@ -1088,6 +1109,7 @@ function Registrar() {
       } = await supabase
         .from("ocorrencias")
         .insert({
+          user_id: user.id,
           categoria,
           titulo: titulo.trim(),
           descricao: descricao.trim(),
