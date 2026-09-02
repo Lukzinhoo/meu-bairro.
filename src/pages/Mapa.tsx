@@ -389,7 +389,7 @@ function Mapa() {
 
         {erroMalha && (
           <div className="aviso-contorno">
-            Não foi possível carregar public/brasil-estados.geojson.
+           A delimitação do Brasil não foi carregada. Exibindo o mapa padrão.
           </div>
         )}
 
